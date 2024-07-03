@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Db_Hibernate</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">admin</property>
+
+        <!-- Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Schema update mode -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Show SQL -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Package scanning -->
+        <property name="hibernate.archive.autodetection">class</property>
+        <property name="hibernate.package_scanner">org.hibernate.boot.archive.scan.internal.PackageScanner</property>
+
+        <!-- Specify the base package for entity scanning -->
+        <property name="hibernate.scan.package">model</property>
+    </session-factory>
+</hibernate-configuration>
